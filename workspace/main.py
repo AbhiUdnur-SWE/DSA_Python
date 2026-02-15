@@ -1,4 +1,4 @@
-from typing import List
+from LinkedList.LinkedListImpl import LinkedList
 
 def rotate(arr) -> None: 
     n = len(arr)
@@ -12,6 +12,6 @@ def rotate(arr) -> None:
         arr[i].reverse()
 
 if __name__ == "__main__":
-    arr = [[1,2,3],[4,5,6],[7,8,9]]
-    print(rotate(arr))
-    print(arr)
+    newLL = LinkedList()
+    newLL.append(2345)
+    print(newLL.head.val)
