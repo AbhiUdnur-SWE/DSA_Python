@@ -1,17 +1,23 @@
-from LinkedList.LinkedListImpl import LinkedList
-
-def rotate(arr) -> None: 
-    n = len(arr)
-    # Step 1: Transpose the matrix
-    for i in range(n):
-        for j in range(i + 1, n):
-            arr[i][j], arr[j][i] = arr[j][i], arr[i][j]
-    
-    # Step 2: Reverse each row
-    for i in range(n):
-        arr[i].reverse()
+from hmac import new
+from traceback import print_exc
+from LinkedList.LinkedListImpl import *
 
 if __name__ == "__main__":
     newLL = LinkedList()
+    newLL.append(465)
     newLL.append(2345)
-    print(newLL.head.val)
+    newLL.append(234545415)
+    newLL.append(54)
+    newLL.prepend(846343)
+    newLL.insert(152,0)
+    # print(newLL)
+    # newLL.set(40, 0)
+    print(newLL)
+    newLL.pop_first()
+    print(newLL)
+    newLL.pop()
+    print(newLL)
+    newLL.pop()
+    print(newLL)
+    newLL.clear()
+    print(newLL)
