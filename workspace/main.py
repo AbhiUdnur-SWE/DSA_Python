@@ -2,8 +2,11 @@ from hmac import new
 from traceback import print_exc
 from LinkedList.LinkedListImpl import *
 from LinkedList.MergeTwoLinkedList import *
+from LinkedList.remove_dupes_LL import remove_dupes_from_ll
 
 if __name__ == "__main__":
+
+    """ Merge Two LL ""
     # newLL1 = LinkedList()
     # newLL2 = LinkedList()
 
@@ -23,5 +26,24 @@ if __name__ == "__main__":
     #     print(var.val, end=" ")
     #     var = var.next
     # print()
+    """
 
+    """ Remove Dupes from LL ""
+    # newLL1 = LinkedList()
+
+    # newLL1.append(1)
+    # newLL1.append(1)
+    # newLL1.append(2)
+    # newLL1.append(3)
+    # newLL1.append(3)
+    # print(newLL1)
+
+    # var = remove_dupes_from_ll(newLL1.head)
+    # while var:
+    #     print(var.val, end=" ")
+    #     var = var.next
+    # print()
+
+    """
     
+    pass
