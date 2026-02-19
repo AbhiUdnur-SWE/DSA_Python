@@ -93,9 +93,6 @@ class LinkedList:
         self.tail = None
         self.size = 0
         
-    
-
-        
     def __str__(self) -> str:
         temp = self.head
         result = ""
