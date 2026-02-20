@@ -1,9 +1,9 @@
-from hmac import new
 from traceback import print_exc
 from LinkedList.LinkedListImpl import *
 from LinkedList.MergeTwoLinkedList import *
 from LinkedList.remove_dupes_LL import remove_dupes_from_ll
 from LinkedList import remove_all_occur_from_LL
+from LinkedList import reverse_LL
 
 if __name__ == "__main__":
 
@@ -63,4 +63,15 @@ if __name__ == "__main__":
     
     """
 
-    pass
+    newLL1 = LinkedList()
+    newLL1.append(1)
+    newLL1.append(2)
+    newLL1.append(3)
+    newLL1.append(4)
+    newLL1.append(5)
+    print(newLL1)
+    var = reverse_LL.reverse_linked_list(newLL1.head)
+    while var:
+        print(var.val, end=" ")
+        var = var.next
+    print()

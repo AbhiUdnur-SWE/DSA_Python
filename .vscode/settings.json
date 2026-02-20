@@ -3,5 +3,6 @@
     "python-envs.pythonProjects": [],
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "off",
-    "python.REPL.enableREPLSmartSend": false
+    "python.REPL.enableREPLSmartSend": false,
+    "editor.mouseWheelZoom": true
 }
