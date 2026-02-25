@@ -1,9 +1,15 @@
-from traceback import print_exc
-from LinkedList.LinkedListImpl import *
-from LinkedList.MergeTwoLinkedList import *
-from LinkedList.remove_dupes_LL import remove_dupes_from_ll
-from LinkedList import remove_all_occur_from_LL
-from LinkedList import reverse_LL
+"""
+# from LinkedList.LinkedListImpl import *
+# from LinkedList.MergeTwoLinkedList import *
+# from LinkedList.remove_dupes_LL import remove_dupes_from_ll
+# from LinkedList import remove_all_occur_from_LL
+# from LinkedList import reverse_LL
+# from LinkedList.CirSingLinkedList import *
+# from LinkedList import CirSingLinkedList
+"""
+from LinkedList import *
+from LinkedList.DoublyLL import DoublyLL
+from LinkedList.DoublyCirLL import DoublyCirLL
 
 if __name__ == "__main__":
 
@@ -54,7 +60,7 @@ if __name__ == "__main__":
     # newLL1.append(2)
     # newLL1.append(3)
     # newLL1.append(3)
-    # print(newLL1)
+    # print(newLL1)short
     # var = remove_all_occur_from_LL.remove_occr_LL(newLL1.head, 1)
     # while var:
     #     print(var.val, end=" ")
@@ -63,6 +69,7 @@ if __name__ == "__main__":
     
     """
 
+    """ Reverse Linked List ""
     newLL1 = LinkedList()
     newLL1.append(1)
     newLL1.append(2)
@@ -74,4 +81,29 @@ if __name__ == "__main__":
     while var:
         print(var.val, end=" ")
         var = var.next
-    print()
+    print() 
+    
+    """
+
+    """ Doubly (sinmple & circular) linked list ""
+    d_ll = DoublyCirLL()
+    # d_ll = DoublyLL()
+    d_ll.append(1)
+    d_ll.append(2)
+    d_ll.append(3)
+    d_ll.append(4)
+    d_ll.prepend(5)
+    d_ll.insert(0,10000)
+    d_ll.insert(6,1052)
+    print(d_ll) 
+    d_ll.pop_first()
+    print(d_ll) 
+    d_ll.pop_first()
+    print(d_ll) 
+    d_ll.pop()
+    print(d_ll)
+    d_ll.remove(1)
+    print(d_ll)
+    """
+
+    
