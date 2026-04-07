@@ -1,21 +1,20 @@
-from pickle import NONE
-
-from httpx import head
-
 
 class Node:
+    """Node for queue linked list."""
     def __init__(self, val: int):
         self.val = val
         self.next = None
 
 
 class Queue:
+    """Queue implementation using linked list."""
     def __init__(self):
         self.head = None
         self.tail = None
         self.length = 0
 
     def enqueue(self, val):
+        """Add an element to the end of the queue."""
         node = Node(val)
         if not self.head:
             self.head = node
@@ -25,12 +24,13 @@ class Queue:
             self.tail = node
         self.length += 1
 
-    def isEmpty(self):
+    def is_empty(self):
+        """Check if the queue is empty."""
         return self.head == None
 
     def dequeue(self):
 
-        if self.isEmpty():
+        if self.is_empty():
             return "Empty !!"
 
         if self.head == self.tail:
