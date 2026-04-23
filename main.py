@@ -1,27 +1,39 @@
-from Tree import simpleTree
+from Tree.BST import BST, BSTNode
+from Tree.BinaryTreeWithList import BinaryTreeWithList
 from Tree.BinaryTree import TreeNode
 
 if __name__ == "__main__":
+    # root = TreeNode(0)
+    # left = TreeNode(1)
+    # right = TreeNode(2)
+    # root.left = left
+    # root.right = right
+    # print(TreeNode.in_order(root))
+    # print(TreeNode.search_bt(root,2))
+    # TreeNode.del_bt(root)
+    # TreeNode.level_order(root)
 
-    root = simpleTree.SimpleTree(1, [])
-    node2 = simpleTree.SimpleTree(2, [])
-    node3 = simpleTree.SimpleTree(3, [])
-    node4 = simpleTree.SimpleTree(4, [])
-    node5 = simpleTree.SimpleTree(5, [])
-    node6 = simpleTree.SimpleTree(6, [])
+    root = BST(BSTNode(70))
+    root.inser_node(50)
+    root.inser_node(90)
+    root.inser_node(30)
+    root.inser_node(60)
+    root.inser_node(80)
+    root.inser_node(100)
+    root.inser_node(20)
+    root.inser_node(40)
+    root.inser_node(10)
 
-    root.AddChild(node2)
-    root.AddChild(node3)
-    node2.AddChild(node4)
-    node3.AddChild(node5)
-    node3.AddChild(node5)
-    node2.AddChild(node6)
-    print(root)
+    # root.inorder()
+    root.clear()
+    root.inorder()
 
-    root = TreeNode("drinks")
-    left = TreeNode("cold")
-    right = TreeNode("hot")
 
-    root.left = left
-    root.right = right
-    print(TreeNode.in_order(root))
+    # print(root.preorder_traversal())
+    # print(root.postorder_traversal())
+    # print(root.inorder_traversal())
+    # root.level_order()
+    # print(root.del_node(2))
+    # root.level_order()
+    # print(root.clear())
+
