@@ -1,6 +1,3 @@
-from logging import root
-
-
 class BSTNode:
     """BSTNode"""
 
@@ -15,8 +12,6 @@ class BST:
 
     def __init__(self, node: BSTNode):
         self.root = node
-        self.left = None
-        self.right = None
 
     def inser_node(self, val):
         """insert Node"""
@@ -87,7 +82,7 @@ class BST:
         else:
 
             # no child
-            if not root_node.left or not root_node.right:
+            if not root_node.left and not root_node.right:
                 return None
 
             # one child
