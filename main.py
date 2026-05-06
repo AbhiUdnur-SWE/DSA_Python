@@ -1,3 +1,6 @@
+from hmac import new
+
+from Tree.Trie import Trie
 from Tree.BinaryHeap import BinaryHeap, HeapNode
 from Tree.AVL import AVLNode, AVLTree
 from Tree.BST import BST, BSTNode
@@ -5,7 +8,6 @@ from Tree.BinaryTreeWithList import BinaryTreeWithList
 from Tree.BinaryTree import TreeNode
 
 if __name__ == "__main__":
-    pass
     # root = TreeNode(0)
     # left = TreeNode(1)
     # right = TreeNode(2)
@@ -44,12 +46,20 @@ if __name__ == "__main__":
     # root.clear()
     # root.level_order()
 
-    root = BinaryHeap(HeapNode(5, "max"))
-    root.insert(4)
-    root.insert(5)
-    root.insert(2)
-    root.insert(1)
-    root.extract_node()
-    root.level_order_traversal()
-    root.clear()
-    print(root.level_order_traversal())
+    # root = BinaryHeap(HeapNode(5, "max"))
+    # root.insert(4)
+    # root.insert(5)
+    # root.insert(2)
+    # root.insert(1)
+    # root.extract_node()
+    # root.level_order_traversal()
+    # root.clear()
+    # print(root.level_order_traversal())
+    new_trie = Trie()
+    new_trie.insert("Hello")
+    new_trie.insert("Apple")
+    new_trie.insert("App")
+
+    print(new_trie.search("App"))
+    print(new_trie.delete("App"))
+    print(new_trie.search("App"))
