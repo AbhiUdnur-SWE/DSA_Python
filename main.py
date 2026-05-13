@@ -1,5 +1,6 @@
-from hmac import new
-
+from Sorting.heapsort import heapsort
+from Sorting.quick_sort import quicksort
+from Sorting.sort import bubble_sort, insertion_sort, merge_sort, selection_sort
 from Tree.Trie import Trie
 from Tree.BinaryHeap import BinaryHeap, HeapNode
 from Tree.AVL import AVLNode, AVLTree
@@ -55,11 +56,15 @@ if __name__ == "__main__":
     # root.level_order_traversal()
     # root.clear()
     # print(root.level_order_traversal())
-    new_trie = Trie()
-    new_trie.insert("Hello")
-    new_trie.insert("Apple")
-    new_trie.insert("App")
+    # new_trie = Trie()
+    # new_trie.insert("Hello")
+    # new_trie.insert("Apple")
+    # new_trie.insert("App")
 
-    print(new_trie.search("App"))
-    print(new_trie.delete("App"))
-    print(new_trie.search("App"))
+    # print(new_trie.search("App"))
+    # print(new_trie.delete("App"))
+    # print(new_trie.search("App"))
+
+    lst = [5,4,1000,2,1]
+    heapsort(lst)
+    print(lst)
