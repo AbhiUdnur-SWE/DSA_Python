@@ -1,3 +1,4 @@
+from Search.binary import binary_search_iter, binary_search_recur
 from Sorting.heapsort import heapsort
 from Sorting.quick_sort import quicksort
 from Sorting.sort import bubble_sort, insertion_sort, merge_sort, selection_sort
@@ -66,5 +67,4 @@ if __name__ == "__main__":
     # print(new_trie.search("App"))
 
     lst = [5,4,1000,2,1]
-    heapsort(lst)
-    print(lst)
+    print(binary_search_iter(lst, 1000))
