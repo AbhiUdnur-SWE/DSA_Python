@@ -1,3 +1,4 @@
+from Graph.Graph import Graph
 from Search.binary import binary_search_iter, binary_search_recur
 from Sorting.heapsort import heapsort
 from Sorting.quick_sort import quicksort
@@ -66,5 +67,39 @@ if __name__ == "__main__":
     # print(new_trie.delete("App"))
     # print(new_trie.search("App"))
 
-    lst = [5,4,1000,2,1]
-    print(binary_search_iter(lst, 1000))
+    # lst = [5, 4, 1000, 2, 1]
+    # print(binary_search_iter(lst, 1000))
+
+    # cutomDict = {
+    #     "a": ["b", "c"],
+    #     "b": ["a", "d", "e"],
+    #     "c": ["a", "e"],
+    #     "d": ["b", "e", "f"],
+    #     "e": ["d", "f", "c"],
+    #     "f": ["d", "e"],
+    # }
+
+    g = Graph()
+    g.add_vertex("a")
+    g.add_vertex("c")
+    g.add_vertex("e")
+    g.add_vertex("h")
+    g.add_vertex("f")
+    g.add_vertex("b")
+    g.add_vertex("d")
+    g.add_vertex("g")
+
+    g.add_edge_unidirectional("a", "c")
+    g.add_edge_unidirectional("c", "e")
+    g.add_edge_unidirectional("e", "h")
+    g.add_edge_unidirectional("e", "f")
+    g.add_edge_unidirectional("f", "g")
+    g.add_edge_unidirectional("b", "d")
+    g.add_edge_unidirectional("b", "c")
+    g.add_edge_unidirectional("d", "f")
+
+    # g.print_graph()
+    # print(g.remove_vertex("a"))
+    # g.print_graph()
+
+    g.topological_sort()
