@@ -1,4 +1,6 @@
 from Graph.Graph import Graph
+from Graph.SSSPP_BFS import SSSPP_Graph
+from Graph.SSSPP_DijKstras import Dijkstra, Node
 from Search.binary import binary_search_iter, binary_search_recur
 from Sorting.heapsort import heapsort
 from Sorting.quick_sort import quicksort
@@ -79,27 +81,75 @@ if __name__ == "__main__":
     #     "f": ["d", "e"],
     # }
 
-    g = Graph()
-    g.add_vertex("a")
-    g.add_vertex("c")
-    g.add_vertex("e")
-    g.add_vertex("h")
-    g.add_vertex("f")
-    g.add_vertex("b")
-    g.add_vertex("d")
-    g.add_vertex("g")
+    # g = Graph()
+    # g.add_vertex("a")
+    # g.add_vertex("c")
+    # g.add_vertex("e")
+    # g.add_vertex("h")
+    # g.add_vertex("f")
+    # g.add_vertex("b")
+    # g.add_vertex("d")
+    # g.add_vertex("g")
 
-    g.add_edge_unidirectional("a", "c")
-    g.add_edge_unidirectional("c", "e")
-    g.add_edge_unidirectional("e", "h")
-    g.add_edge_unidirectional("e", "f")
-    g.add_edge_unidirectional("f", "g")
-    g.add_edge_unidirectional("b", "d")
-    g.add_edge_unidirectional("b", "c")
-    g.add_edge_unidirectional("d", "f")
+    # g.add_edge_unidirectional("a", "c")
+    # g.add_edge_unidirectional("c", "e")
+    # g.add_edge_unidirectional("e", "h")
+    # g.add_edge_unidirectional("e", "f")
+    # g.add_edge_unidirectional("f", "g")
+    # g.add_edge_unidirectional("b", "d")
+    # g.add_edge_unidirectional("b", "c")
+    # g.add_edge_unidirectional("d", "f")
 
     # g.print_graph()
     # print(g.remove_vertex("a"))
-    # g.print_graph()
+    # # g.print_graph()
+    # g.topological_sort()
 
-    g.topological_sort()
+    # custome_dict = {
+    #     "a" : ["b", "c"],
+    #     "b" : ["d", "G"],
+    #     "c" : ["d", "e"],
+    #     "d" : ["f"],
+    #     "e" : ["f"],
+    #     "g" : ["f"]
+    # }
+
+    # g = SSSPP_Graph(custome_dict)
+    # print(g.bfs("a", "f"))
+
+    nodeA = Node("A")
+    nodeB = Node("B")
+    nodeC = Node("C")
+    nodeD = Node("D")
+    nodeE = Node("E")
+    nodeF = Node("F")
+    nodeG = Node("G")
+    nodeH = Node("H")
+
+    nodeA.add_edge(6, nodeB)
+    nodeA.add_edge(10, nodeC)
+    nodeA.add_edge(9, nodeD)
+
+    nodeB.add_edge(5, nodeD)
+    nodeB.add_edge(16, nodeE)
+    nodeB.add_edge(13, nodeF)
+
+    nodeC.add_edge(6, nodeD)
+    nodeC.add_edge(5, nodeH)
+    nodeC.add_edge(21, nodeG)
+
+    nodeD.add_edge(8, nodeF)
+    nodeD.add_edge(7, nodeH)
+
+    nodeE.add_edge(10, nodeG)
+
+    nodeF.add_edge(4, nodeE)
+    nodeF.add_edge(12, nodeG)
+
+    nodeH.add_edge(2, nodeF)
+    nodeH.add_edge(14, nodeG)
+
+    algo = Dijkstra()
+    algo.calculate(nodeA)
+    algo.get_shortest_path(nodeG)
+    print()
