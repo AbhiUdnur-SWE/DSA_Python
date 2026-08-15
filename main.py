@@ -1,6 +1,8 @@
-from Graph.Graph import Graph
+# from Graph.BellmanFord import Graph
+from Graph.FloydWarshall_AllPairssp import floyd_warshall
 from Graph.SSSPP_BFS import SSSPP_Graph
 from Graph.SSSPP_DijKstras import Dijkstra, Node
+from Graph.disjointset import DisjointSet
 from Search.binary import binary_search_iter, binary_search_recur
 from Sorting.heapsort import heapsort
 from Sorting.quick_sort import quicksort
@@ -11,6 +13,9 @@ from Tree.AVL import AVLNode, AVLTree
 from Tree.BST import BST, BSTNode
 from Tree.BinaryTreeWithList import BinaryTreeWithList
 from Tree.BinaryTree import TreeNode
+
+# from Graph.Kruskals import Graph
+from Graph.Prims import Graph
 
 if __name__ == "__main__":
     # root = TreeNode(0)
@@ -117,39 +122,109 @@ if __name__ == "__main__":
     # g = SSSPP_Graph(custome_dict)
     # print(g.bfs("a", "f"))
 
-    nodeA = Node("A")
-    nodeB = Node("B")
-    nodeC = Node("C")
-    nodeD = Node("D")
-    nodeE = Node("E")
-    nodeF = Node("F")
-    nodeG = Node("G")
-    nodeH = Node("H")
+    # nodeA = Node("A")
+    # nodeB = Node("B")
+    # nodeC = Node("C")
+    # nodeD = Node("D")
+    # nodeE = Node("E")
+    # nodeF = Node("F")
+    # nodeG = Node("G")
+    # nodeH = Node("H")
 
-    nodeA.add_edge(6, nodeB)
-    nodeA.add_edge(10, nodeC)
-    nodeA.add_edge(9, nodeD)
+    # nodeA.add_edge(6, nodeB)
+    # nodeA.add_edge(10, nodeC)
+    # nodeA.add_edge(9, nodeD)
 
-    nodeB.add_edge(5, nodeD)
-    nodeB.add_edge(16, nodeE)
-    nodeB.add_edge(13, nodeF)
+    # nodeB.add_edge(5, nodeD)
+    # nodeB.add_edge(16, nodeE)
+    # nodeB.add_edge(13, nodeF)
 
-    nodeC.add_edge(6, nodeD)
-    nodeC.add_edge(5, nodeH)
-    nodeC.add_edge(21, nodeG)
+    # nodeC.add_edge(6, nodeD)
+    # nodeC.add_edge(5, nodeH)
+    # nodeC.add_edge(21, nodeG)
 
-    nodeD.add_edge(8, nodeF)
-    nodeD.add_edge(7, nodeH)
+    # nodeD.add_edge(8, nodeF)
+    # nodeD.add_edge(7, nodeH)
 
-    nodeE.add_edge(10, nodeG)
+    # nodeE.add_edge(10, nodeG)
 
-    nodeF.add_edge(4, nodeE)
-    nodeF.add_edge(12, nodeG)
+    # nodeF.add_edge(4, nodeE)
+    # nodeF.add_edge(12, nodeG)
 
-    nodeH.add_edge(2, nodeF)
-    nodeH.add_edge(14, nodeG)
+    # nodeH.add_edge(2, nodeF)
+    # nodeH.add_edge(14, nodeG)
 
-    algo = Dijkstra()
-    algo.calculate(nodeA)
-    algo.get_shortest_path(nodeG)
-    print()
+    # algo = Dijkstra()
+    # algo.calculate(nodeA)
+    # algo.get_shortest_path(nodeG)
+    # print()
+
+    # g = Graph(5)
+    # g.add_node("A")
+    # g.add_node("B")
+    # g.add_node("C")
+    # g.add_node("D")
+    # g.add_node("E")
+
+    # g.add_edge("A", "C", 6)
+    # g.add_edge("A", "D", 6)
+    # g.add_edge("B", "A", 3)
+    # g.add_edge("C", "D", 1)
+    # g.add_edge("D", "C", 2)
+    # g.add_edge("D", "B", 1)
+    # g.add_edge("E", "B", 4)
+    # g.add_edge("E", "D", 2)
+    # g.bellman_ford("E")
+
+    # INF = 999
+    # g = [
+    #         [0, 8, INF, 1],
+    #         [INF, 0, 1, INF],
+    #         [4, INF, 0, INF],
+    #         [INF, 2, 9, 1]
+    #     ]
+
+    # floyd_warshall(4, g)
+
+    # vertices = ["A", "B", "C", "D", "E"]
+
+    # ds = DisjointSet(vertices)
+    # ds.union("A", "B")
+    # ds.union("B", "C")
+    # print(ds.find("C"))
+
+    # g = Graph(5)
+    # g.add_node("A")
+    # g.add_node("B")
+    # g.add_node("C")
+    # g.add_node("D")
+    # g.add_node("E")
+
+    # g.add_edge("A","B",5)
+    # g.add_edge("A","C",13)
+    # g.add_edge("A","E",15)
+    # g.add_edge("B","A",5)
+    # g.add_edge("B","C",10)
+    # g.add_edge("B","D",8)
+    # g.add_edge("C","A",13)
+    # g.add_edge("C","B",10)
+    # g.add_edge("C","E",20)
+
+    # g.add_edge("C", "D", "6")
+    # g.add_edge("D", "B", "8")
+    # g.add_edge("D", "C", "6")
+    # g.add_edge("E", "A", "15")
+    # g.add_edge("E", "C", "20")
+
+    # g.kruskals_algo()
+
+    g = Graph(5)
+    g.graph = [
+        [0, 2, 0, 6, 0],
+        [2, 0, 3, 8, 5],
+        [0, 3, 0, 0, 7],
+        [6, 8, 0, 0, 9],
+        [0, 5, 7, 9, 0],
+    ]
+
+    g.prims_mst()
